@@ -1,11 +1,9 @@
 package test;
 
+import core.DriverContainer;
 import element.NotesPopup;
 import element.Popover;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -14,8 +12,6 @@ import page.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
-import static core.DriverContainer.getDriver;
 
 
 public class AddNoteTest {
@@ -57,7 +53,7 @@ public class AddNoteTest {
 
     @AfterClass(description = "Close browser")
     public void closeBrowser() {
-        getDriver().quit();
+        DriverContainer.getDriver().quit();
         System.out.println("Browser is closed");
     }
 }

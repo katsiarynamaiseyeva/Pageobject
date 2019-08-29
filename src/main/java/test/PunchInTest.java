@@ -1,5 +1,6 @@
 package test;
 
+import core.DriverContainer;
 import element.ConfirmationPopup;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -37,7 +38,7 @@ public class PunchInTest {
 
     @AfterClass(description = "Close browser")
     public void closeBrowser() {
-        driver.quit();
+        DriverContainer.getDriver().quit();
         System.out.println("Browser is closed");
     }
 
